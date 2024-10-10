@@ -11,8 +11,14 @@ dependencies:
   flutter:
     sdk: flutter
 
+  # utility packages
+  google_fonts: ^6.2.1
 
   cupertino_icons: ^1.0.6
+
+  # state management
+  get: ^4.6.6
+  get_storage: ^2.1.1
 
 dev_dependencies:
   flutter_test:
