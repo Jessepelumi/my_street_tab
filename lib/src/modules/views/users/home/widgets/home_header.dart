@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
+import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
+import 'package:my_street_tab/src/utils/core/sizes.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({
@@ -11,8 +14,14 @@ class HomeHeader extends StatelessWidget {
     return ClipPath(
       //clipper: CustomCurveClipper(),
       child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: const BoxDecoration(color: Colors.blue),
+        padding: const EdgeInsets.all(medium),
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [primary, primaryTwo],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,10 +30,13 @@ class HomeHeader extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 4, vertical: 2),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: extraSmall,
+                        vertical: extraSmall / 2,
+                      ),
                       decoration: BoxDecoration(
                         color: white,
-                        borderRadius: BorderRadius.circular(36),
+                        borderRadius: BorderRadius.circular(smallLarge),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -32,60 +44,69 @@ class HomeHeader extends StatelessWidget {
                           Expanded(
                             child: TextFormField(
                               cursorColor: darkText.withOpacity(0.7),
-                              cursorHeight: 16.0,
+                              cursorHeight: medium,
                               decoration: const InputDecoration(
                                 hintText: "Search",
                                 enabledBorder: InputBorder.none,
                                 focusedBorder: InputBorder.none,
                                 isDense: true,
-                                contentPadding: EdgeInsets.all(4),
+                                contentPadding: EdgeInsets.symmetric(
+                                    horizontal: small, vertical: extraSmall),
                               ),
                             ),
                           ),
                           Container(
-                            height: 26,
-                            width: 26,
                             decoration: BoxDecoration(
                               color: darkText,
-                              borderRadius: BorderRadius.circular(100),
+                              borderRadius: BorderRadius.circular(smallMedium),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(extraSmall),
+                              child: SvgPicture.asset(
+                                IconStrings.filterOutlined,
+                                colorFilter: const ColorFilter.mode(
+                                  white,
+                                  BlendMode.srcIn,
+                                ),
+                                width: 20,
+                                height: 20,
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
+                  const SizedBox(width: small),
                   Container(
-                    height: 30,
-                    width: 30,
                     decoration: BoxDecoration(
                       color: white,
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(small),
                     ),
-                  ),
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration: BoxDecoration(
-                      color: white,
-                      borderRadius: BorderRadius.circular(8),
+                    child: Padding(
+                      padding: const EdgeInsets.all(extraSmall),
+                      child: SvgPicture.asset(
+                        IconStrings.cartOutlined,
+                      ),
                     ),
                   ),
                 ],
               ),
+              const SizedBox(height: smallMedium),
 
               // greeting
               Text(
                 "Good Morning",
                 style: Theme.of(context).textTheme.displaySmall?.copyWith(
                       color: white,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w900,
                     ),
               ),
               Text(
                 "Rice and Shine! It's Breakfast Time",
                 style: Theme.of(context)
                     .textTheme
-                    .labelMedium
+                    .labelLarge
                     ?.copyWith(color: white),
               ),
             ],
