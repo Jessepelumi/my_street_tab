@@ -1,5 +1,6 @@
 class IconStrings {
   // navigation bar icons
+  static const String cartOutlined = "assets/svg/cart-outlined.svg";
   static const String chatFilled = "assets/svg/chat-filled.svg";
   static const String chatOutlined = "assets/svg/chat-outlined.svg";
   static const String homeFilled = "assets/svg/home-filled.svg";
