@@ -13,4 +13,11 @@ class IconStrings {
       "assets/svg/notification-outlined.svg";
   static const String userFilled = "assets/svg/user-filled.svg";
   static const String userOutlined = "assets/svg/user-outlined.svg";
+
+  // categories
+  static const String desserts = "assets/svg/desserts.svg";
+  static const String drinks = "assets/svg/drinks.svg";
+  static const String meals = "assets/svg/meals.svg";
+  static const String snacks = "assets/svg/snacks.svg";
+  static const String vegan = "assets/svg/vegan.svg";
 }
