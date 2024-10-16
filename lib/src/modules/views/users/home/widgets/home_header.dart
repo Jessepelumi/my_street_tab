@@ -14,7 +14,7 @@ class HomeHeader extends StatelessWidget {
     return ClipPath(
       //clipper: CustomCurveClipper(),
       child: Container(
-        padding: const EdgeInsets.all(medium),
+        padding: const EdgeInsets.all(large),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [primary, primaryTwo],
