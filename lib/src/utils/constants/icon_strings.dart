@@ -20,4 +20,7 @@ class IconStrings {
   static const String meals = "assets/svg/meals.svg";
   static const String snacks = "assets/svg/snacks.svg";
   static const String vegan = "assets/svg/vegan.svg";
+
+  // arrow
+  static const String arrowRight = "assets/svg/arrow-right.svg";
 }
