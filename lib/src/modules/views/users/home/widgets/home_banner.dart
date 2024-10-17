@@ -21,10 +21,10 @@ class HomeBanner extends StatelessWidget {
           color: primary.withOpacity(0.2),
           borderRadius: BorderRadius.circular(medium),
         ),
-        child: Image.network(
-          src,
-          fit: BoxFit.cover,
-        ),
+        // child: Image.network(
+        //   src,
+        //   fit: BoxFit.cover,
+        // ),
       ),
     );
   }

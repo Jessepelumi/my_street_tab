@@ -4,7 +4,9 @@ import 'package:my_street_tab/src/utils/core/sizes.dart';
 
 class BestsellerContainer extends StatelessWidget {
   const BestsellerContainer({
-    super.key, required this.src, required this.price,
+    super.key,
+    required this.src,
+    required this.price,
   });
 
   final String src, price;
@@ -23,10 +25,10 @@ class BestsellerContainer extends StatelessWidget {
               color: primary.withOpacity(0.2),
               borderRadius: BorderRadius.circular(medium),
             ),
-            child: Image.network(
-              src,
-              fit: BoxFit.cover,
-            ),
+            // child: Image.network(
+            //   src,
+            //   fit: BoxFit.cover,
+            // ),
           ),
         ),
 
