@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
 
-class ActionHeader extends StatelessWidget {
-  const ActionHeader({
+class SectionHeader extends StatelessWidget {
+  const SectionHeader({
     super.key,
   });
 
