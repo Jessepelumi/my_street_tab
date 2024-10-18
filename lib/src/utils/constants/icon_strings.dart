@@ -23,4 +23,8 @@ class IconStrings {
 
   // arrow
   static const String arrowRight = "assets/svg/arrow-right.svg";
+
+  static const String clockOutlined = "assets/svg/clock-outlined.svg";
+  static const String fireOutlined = "assets/svg/fire-outlined.svg";
+  static const String heartOutlined = "assets/svg/heart-outlined.svg";
 }
