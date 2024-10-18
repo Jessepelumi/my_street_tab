@@ -4,8 +4,8 @@ import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
 
-class HorizontalContainer extends StatelessWidget {
-  const HorizontalContainer({
+class VerticalContainer extends StatelessWidget {
+  const VerticalContainer({
     super.key,
   });
 
