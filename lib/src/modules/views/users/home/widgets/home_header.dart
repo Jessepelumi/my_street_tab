@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:my_street_tab/src/modules/views/users/home/cart.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
@@ -78,15 +80,18 @@ class HomeHeader extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: small),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: white,
-                      borderRadius: BorderRadius.circular(small),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(extraSmall),
-                      child: SvgPicture.asset(
-                        IconStrings.cartOutlined,
+                  GestureDetector(
+                    onTap: () => Get.to(() => const Cart()),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: white,
+                        borderRadius: BorderRadius.circular(small),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(extraSmall),
+                        child: SvgPicture.asset(
+                          IconStrings.cartOutlined,
+                        ),
                       ),
                     ),
                   ),
