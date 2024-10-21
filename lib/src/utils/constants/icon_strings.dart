@@ -27,4 +27,5 @@ class IconStrings {
   static const String clockOutlined = "assets/svg/clock-outlined.svg";
   static const String fireOutlined = "assets/svg/fire-outlined.svg";
   static const String heartOutlined = "assets/svg/heart-outlined.svg";
+  static const String swipe = "assets/svg/swipe.svg";
 }
