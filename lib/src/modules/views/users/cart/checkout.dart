@@ -66,7 +66,7 @@ class Checkout extends StatelessWidget {
                             ),
                             Obx(
                               () => CheckoutMethod(
-                                title: "Bank",
+                                title: "Bank account",
                                 value: 2,
                                 containerColor: red,
                                 groupValue:
