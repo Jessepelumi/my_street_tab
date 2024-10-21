@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_street_tab/src/modules/router/navigation.dart';
+import 'package:my_street_tab/src/modules/router/user/navigation.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/themes/elevated_button.dart';
 

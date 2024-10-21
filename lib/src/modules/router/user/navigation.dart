@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:my_street_tab/src/modules/router/navigation_controller.dart';
+import 'package:my_street_tab/src/modules/router/user/navigation_controller.dart';
 import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 
 class Navigation extends StatelessWidget {
