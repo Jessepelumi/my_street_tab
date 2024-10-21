@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_street_tab/src/modules/views/shared/client_elevated_button.dart';
 import 'package:my_street_tab/src/modules/views/shared/custom_appbar.dart';
+import 'package:my_street_tab/src/modules/views/users/cart/congratulations.dart';
 import 'package:my_street_tab/src/modules/views/users/cart/widgets/checkout_method.dart';
 import 'package:my_street_tab/src/modules/views/users/controller/checkout_controller.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
@@ -194,7 +195,7 @@ class Checkout extends StatelessWidget {
                 width: double.infinity,
                 child: ClientElevatedButton(
                   buttonText: "Proceed to Payment",
-                  buttonAction: () {},
+                  buttonAction: () => Get.to(() => const Congratulations()),
                 ),
               ),
             ],
