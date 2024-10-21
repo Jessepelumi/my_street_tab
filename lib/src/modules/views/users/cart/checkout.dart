@@ -143,18 +143,14 @@ class Checkout extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .labelLarge
-                                    ?.copyWith(
-                                      color: darkText,
-                                    ),
+                                    ?.copyWith(color: darkText),
                               ),
                               Text(
                                 "\$30.10",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleSmall
-                                    ?.copyWith(
-                                      color: darkText,
-                                    ),
+                                    ?.copyWith(color: darkText),
                               ),
                             ],
                           );
@@ -208,4 +204,3 @@ class Checkout extends StatelessWidget {
     );
   }
 }
-
