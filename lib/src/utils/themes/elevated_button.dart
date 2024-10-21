@@ -10,7 +10,7 @@ class AppElevatedButtonTheme {
     style: ElevatedButton.styleFrom(
       backgroundColor: primary,
       foregroundColor: Colors.white,
-      fixedSize: const Size(double.infinity, 60),
+      fixedSize: const Size(double.infinity, 65),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(extraLarge),
       ),
