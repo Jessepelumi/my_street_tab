@@ -51,7 +51,7 @@ class Cart extends StatelessWidget {
                 width: double.infinity,
                 child: ClientElevatedButton(
                   buttonText: "Complete Order",
-                  buttonAction: () => Get.to(() => const Checkout()),
+                  buttonAction: () => Get.to(() => Checkout()),
                 ),
               ),
             ],
