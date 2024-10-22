@@ -1,5 +1,5 @@
 class IconStrings {
-  // navigation bar icons
+  // user navigation bar icons
   static const String cartOutlined = "assets/svg/cart-outlined.svg";
   static const String chatFilled = "assets/svg/chat-filled.svg";
   static const String chatOutlined = "assets/svg/chat-outlined.svg";
@@ -13,6 +13,13 @@ class IconStrings {
       "assets/svg/notification-outlined.svg";
   static const String userFilled = "assets/svg/user-filled.svg";
   static const String userOutlined = "assets/svg/user-outlined.svg";
+
+  // vendor navigation bar icons
+  static const String dashboard = "assets/svg/dashboard.svg";
+  static const String hamburgerMenu = "assets/svg/hamburger-menu.svg";
+  static const String profile = "assets/svg/profile.svg";
+  static const String notificationBell = "assets/svg/notification-bell.svg";
+  static const String plus = "assets/svg/plus.svg";
 
   // categories
   static const String desserts = "assets/svg/desserts.svg";
