@@ -8,11 +8,11 @@ import 'package:my_street_tab/src/modules/views/users/profile/profile.dart';
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
 
-  final screens = [
-    const Home(),
-    const Location(),
-    const Chat(),
-    const Notification(),
-    const Profile(),
+  final screens = const [
+    Home(),
+    Location(),
+    Chat(),
+    Notification(),
+    Profile(),
   ];
 }
