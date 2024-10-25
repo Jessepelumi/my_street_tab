@@ -61,19 +61,20 @@ class Navigation extends StatelessWidget {
                   // message indicator
                   Positioned(
                     right: -5,
+                    top: -3,
                     child: Container(
-                      //height: 10,
-                      //width: 10,
                       padding: const EdgeInsets.symmetric(horizontal: 4),
                       decoration: BoxDecoration(
                         color: Colors.red,
                         borderRadius: BorderRadius.circular(100),
                       ),
-                      child: const Text(
-                        "1",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 9,
+                      child: const Center(
+                        child: Text(
+                          "1",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 9,
+                          ),
                         ),
                       ),
                     ),
