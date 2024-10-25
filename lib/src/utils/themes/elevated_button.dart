@@ -12,7 +12,7 @@ class AppElevatedButtonTheme {
       foregroundColor: Colors.white,
       fixedSize: const Size(double.infinity, 65),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(extraLarge),
+        borderRadius: BorderRadius.circular(smallMedium),
       ),
       textStyle: GoogleFonts.leagueSpartan(
         fontWeight: FontWeight.w600,
