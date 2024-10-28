@@ -8,10 +8,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     required this.title,
     this.actions,
+    this.isPageHeader = false,
   });
 
   final String title;
   final List<Widget>? actions;
+  final bool isPageHeader;
 
   @override
   Widget build(BuildContext context) {
@@ -20,13 +22,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: AppBar(
         backgroundColor: scaffoldWhite,
         automaticallyImplyLeading: false,
-        leading: GestureDetector(
-          onTap: () => Get.back(),
-          child: const Icon(
-            Icons.arrow_back_ios_new_rounded,
-            color: darkText,
-          ),
-        ),
+        leading: isPageHeader == false
+            ? GestureDetector(
+                onTap: () => Get.back(),
+                child: const Icon(
+                  Icons.arrow_back_ios_new_rounded,
+                  color: darkText,
+                ),
+              )
+            : null,
         title: Text(
           title,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
