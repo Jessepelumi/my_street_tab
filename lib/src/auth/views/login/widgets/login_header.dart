@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
@@ -20,7 +21,10 @@ class LoginHeader extends StatelessWidget {
       //clipper: CustomCurveClipper(),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        padding: const EdgeInsets.all(large),
+        padding: const EdgeInsets.symmetric(
+          horizontal: large,
+          vertical: smallMedium,
+        ),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [primary, primaryTwo],
@@ -33,17 +37,20 @@ class LoginHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (hasPrevious == true)
-                Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                    color: white,
-                    borderRadius: BorderRadius.circular(extraLarge),
-                  ),
-                  child: const Icon(
-                    Icons.arrow_back_ios_new_rounded,
-                    color: darkText,
-                    size: 18,
+                GestureDetector(
+                  onTap: () => Get.back(),
+                  child: Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      color: white,
+                      borderRadius: BorderRadius.circular(extraLarge),
+                    ),
+                    child: const Icon(
+                      Icons.arrow_back_ios_new_rounded,
+                      color: darkText,
+                      size: 18,
+                    ),
                   ),
                 ),
               const SizedBox(height: medium),
