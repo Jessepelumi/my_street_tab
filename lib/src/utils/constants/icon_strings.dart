@@ -42,4 +42,9 @@ class IconStrings {
   // vendor app
   static const String headerMenu = "assets/svg/header-menu.svg";
   static const String star = "assets/svg/star.svg";
+
+  // brand logo
+  static const String facebook = "assets/svg/facebook.svg";
+  static const String google = "assets/svg/google.svg";
+  static const String apple = "assets/svg/apple.svg";
 }
