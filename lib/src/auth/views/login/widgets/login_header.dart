@@ -61,6 +61,7 @@ class LoginHeader extends StatelessWidget {
                     ),
                     Text(
                       subtitle,
+                      textAlign: TextAlign.center,
                       style: GoogleFonts.sen(
                         color: white,
                       ),
