@@ -4,7 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_street_tab/src/locale/location_service.dart';
-import 'package:my_street_tab/src/modules/views/users/home/home.dart';
+import 'package:my_street_tab/src/modules/router/user/navigation.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 import 'package:my_street_tab/src/utils/constants/image_strings.dart';
@@ -19,7 +19,7 @@ class AccessLocation extends StatelessWidget {
       debugPrint(
         "User's location: ${position.latitude}, ${position.longitude}",
       );
-      Get.to(() => const Home());
+      Get.to(() => const Navigation());
     }
   }
 

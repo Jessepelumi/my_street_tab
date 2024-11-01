@@ -10,8 +10,8 @@ import 'package:my_street_tab/src/auth/views/login/forgot_password.dart';
 import 'package:my_street_tab/src/auth/views/login/signup.dart';
 import 'package:my_street_tab/src/auth/views/login/widgets/auth_textfield.dart';
 import 'package:my_street_tab/src/auth/views/login/widgets/login_header.dart';
+import 'package:my_street_tab/src/modules/router/user/navigation.dart';
 import 'package:my_street_tab/src/modules/views/shared/client_elevated_button.dart';
-import 'package:my_street_tab/src/modules/views/users/home/home.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
@@ -90,7 +90,7 @@ class Login extends StatelessWidget {
 
                       if (permission == LocationPermission.always ||
                           permission == LocationPermission.whileInUse) {
-                        Get.to(() => const Home());
+                        Get.to(() => const Navigation());
                       } else {
                         Get.to(() => const AccessLocation());
                       }
