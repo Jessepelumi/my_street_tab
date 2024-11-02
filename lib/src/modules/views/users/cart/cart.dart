@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:my_street_tab/src/modules/views/shared/client_elevated_button.dart';
 import 'package:my_street_tab/src/modules/views/shared/custom_appbar.dart';
 import 'package:my_street_tab/src/modules/views/users/cart/checkout.dart';
 import 'package:my_street_tab/src/modules/views/users/cart/widgets/cart_container.dart';
-import 'package:my_street_tab/src/utils/constants/color_strings.dart';
-import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
+import 'package:my_street_tab/src/modules/views/users/cart/widgets/payment_summary.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
 
 class Cart extends StatelessWidget {
@@ -15,38 +13,31 @@ class Cart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: "Cart"),
+      appBar: CustomAppBar(
+        title: "My Cart",
+        hasAction: true,
+        action: () {},
+      ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(extraLarge),
+          padding: const EdgeInsets.symmetric(
+            horizontal: extraLarge,
+            vertical: medium,
+          ),
           child: Column(
             children: [
-              Expanded(
+              const Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SvgPicture.asset(IconStrings.swipe),
-                          const SizedBox(width: small),
-                          Text(
-                            "swipe on an item to delete",
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium
-                                ?.copyWith(
-                                  color: darkText,
-                                ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: large),
-                      const CartContainer(),
+                      CartContainer(item: "Burger with meat", price: "24.00"),
                     ],
                   ),
                 ),
               ),
+              const SizedBox(height: small),
+              const PaymentSummary(),
+              const SizedBox(height: medium),
               SizedBox(
                 width: double.infinity,
                 child: ClientElevatedButton(
