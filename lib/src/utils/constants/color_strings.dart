@@ -7,6 +7,7 @@ const black = Color(0xFF000000);
 const scaffoldWhite = Color(0xFFF5F5F5);
 const darkText = Color(0xFF0A2533);
 const red = Color(0xFFFF3D00);
+const delete = Color(0xFFF14141);
 
 // brand
 const facebook = Color(0xFF395998);
