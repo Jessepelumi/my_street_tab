@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:my_street_tab/src/modules/views/shared/client_elevated_button.dart';
 import 'package:my_street_tab/src/modules/views/shared/custom_appbar.dart';
+import 'package:my_street_tab/src/modules/views/users/cart/track_order.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
@@ -60,7 +62,7 @@ class Congratulations extends StatelessWidget {
                 width: double.infinity,
                 child: ClientElevatedButton(
                   buttonText: "Track Order",
-                  buttonAction: () {},
+                  buttonAction: () => Get.to(() => const TrackOrder()),
                 ),
               ),
             ],
