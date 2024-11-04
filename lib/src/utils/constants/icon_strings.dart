@@ -39,6 +39,8 @@ class IconStrings {
   static const String building = "assets/svg/building.svg";
   static const String check = "assets/svg/check.svg";
 
+  static const String courierChat = "assets/svg/courier-chat.svg";
+
   // vendor app
   static const String headerMenu = "assets/svg/header-menu.svg";
   static const String star = "assets/svg/star.svg";
