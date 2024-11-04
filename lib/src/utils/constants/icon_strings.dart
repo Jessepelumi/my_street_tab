@@ -40,6 +40,9 @@ class IconStrings {
   static const String check = "assets/svg/check.svg";
 
   static const String courierChat = "assets/svg/courier-chat.svg";
+  static const String cancel = "assets/svg/cancel.svg";
+  static const String face = "assets/svg/face.svg";
+  static const String send = "assets/svg/send.svg";
 
   // vendor app
   static const String headerMenu = "assets/svg/header-menu.svg";
