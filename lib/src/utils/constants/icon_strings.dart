@@ -43,6 +43,8 @@ class IconStrings {
   static const String cancel = "assets/svg/cancel.svg";
   static const String face = "assets/svg/face.svg";
   static const String send = "assets/svg/send.svg";
+  static const String completed = "assets/svg/completed.svg";
+  static const String loading = "assets/svg/loading.svg";
 
   // vendor app
   static const String headerMenu = "assets/svg/header-menu.svg";
