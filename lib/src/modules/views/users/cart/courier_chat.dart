@@ -174,6 +174,7 @@ class CourierChatAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         title: Text(
           title,
+          overflow: TextOverflow.ellipsis,
           style: GoogleFonts.sen(
             color: darkText,
           ),
