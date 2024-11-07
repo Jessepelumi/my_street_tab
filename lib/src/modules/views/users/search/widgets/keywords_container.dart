@@ -4,8 +4,8 @@ import 'package:my_street_tab/src/modules/views/users/search/search_details.dart
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
 
-class CommodityContainer extends StatelessWidget {
-  const CommodityContainer({
+class KeywordsContainer extends StatelessWidget {
+  const KeywordsContainer({
     super.key,
   });
 
