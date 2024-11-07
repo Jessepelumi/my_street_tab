@@ -193,9 +193,12 @@ class Checkout extends StatelessWidget {
               ),
               SizedBox(
                 width: double.infinity,
-                child: ClientElevatedButton(
-                  buttonText: "Proceed to Payment",
-                  buttonAction: () => Get.to(() => const Congratulations()),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: smallMedium),
+                  child: ClientElevatedButton(
+                    buttonText: "Proceed to Payment",
+                    buttonAction: () => Get.to(() => const Congratulations()),
+                  ),
                 ),
               ),
             ],
