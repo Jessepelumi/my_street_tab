@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_street_tab/src/modules/views/controllers/draggable_sheet_controller.dart';
 import 'package:my_street_tab/src/modules/views/users/cart/courier_chat.dart';
+import 'package:my_street_tab/src/modules/views/users/cart/widgets/tracker_status.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
@@ -50,9 +51,9 @@ class TrackOrder extends StatelessWidget {
 
           // Draggable Sheet
           DraggableScrollableSheet(
-            initialChildSize: 0.175,
+            initialChildSize: 0.18,
             minChildSize: 0.14,
-            maxChildSize: 0.8,
+            maxChildSize: 0.7,
             expand: true,
             snap: true,
             snapSizes: const [0.5],
@@ -70,6 +71,7 @@ class TrackOrder extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
+                    // drag toggle
                     GestureDetector(
                       onVerticalDragUpdate: (details) {
                         controller.adjustDraggableSheet(
@@ -90,17 +92,21 @@ class TrackOrder extends StatelessWidget {
                       ),
                     ),
 
-                    // details
+                    // order details
                     Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SingleChildScrollView(
-                              controller: scrollController,
+                      child: CustomScrollView(
+                        controller: scrollController,
+                        slivers: [
+                          SliverToBoxAdapter(
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints.expand(
+                                height:
+                                    MediaQuery.of(context).size.height * 0.66,
+                              ),
                               child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  // top section
                                   Padding(
                                     padding: const EdgeInsets.all(medium),
                                     child: Row(
@@ -138,90 +144,41 @@ class TrackOrder extends StatelessWidget {
                                                   ),
                                             ),
                                             const SizedBox(height: small),
-                                            RichText(
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(
-                                                    text: "2x",
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium,
-                                                  ),
-                                                  TextSpan(
-                                                    text: " Burger",
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium
-                                                        ?.copyWith(
-                                                          color: primary
-                                                              .withOpacity(0.7),
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            RichText(
-                                              text: TextSpan(
-                                                children: [
-                                                  TextSpan(
-                                                    text: "4x",
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium,
-                                                  ),
-                                                  TextSpan(
-                                                    text: " Sandwich",
-                                                    style: Theme.of(context)
-                                                        .textTheme
-                                                        .labelMedium
-                                                        ?.copyWith(
-                                                          color: primary
-                                                              .withOpacity(0.7),
-                                                        ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
+                                            const OrderSummary(
+                                                quantity: "2",
+                                                comodity: "Burger"),
+                                            const OrderSummary(
+                                                quantity: "4",
+                                                comodity: "Sandwich"),
                                           ],
                                         ),
                                       ],
                                     ),
                                   ),
 
-                                  // estimated time section
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: medium,
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          "20 min",
-                                          style: GoogleFonts.sen(
-                                            color: darkText,
-                                            fontWeight: FontWeight.w900,
-                                            fontSize: large,
+                                  const Expanded(
+                                    child: SingleChildScrollView(
+                                      child: Column(
+                                        children: [
+                                          EstimatedDeliveryTime(
+                                            duration: "120",
                                           ),
-                                        ),
-                                        Text(
-                                          "ESTIMATED DELIVERY TIME",
-                                          textAlign: TextAlign.center,
-                                          style: GoogleFonts.sen(
-                                            color: darkText.withOpacity(0.5),
-                                            fontSize: smallMedium,
+                                          Padding(
+                                            padding: EdgeInsets.all(medium),
+                                            child: TrackerStatus(),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
+
+                                  //
+                                  const CourierAgent(courierName: "Robert F."),
                                 ],
                               ),
                             ),
-
-                            // delivery agent
-                            const CourierAgent(),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -235,10 +192,84 @@ class TrackOrder extends StatelessWidget {
   }
 }
 
+// order summary widget
+class OrderSummary extends StatelessWidget {
+  const OrderSummary({
+    super.key,
+    required this.quantity,
+    required this.comodity,
+  });
+
+  final String quantity, comodity;
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        children: [
+          TextSpan(
+            text: "${quantity}x",
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
+          TextSpan(
+            text: " $comodity",
+            style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                  color: primary.withOpacity(0.7),
+                ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// estimated time widget
+class EstimatedDeliveryTime extends StatelessWidget {
+  const EstimatedDeliveryTime({
+    super.key,
+    required this.duration,
+  });
+
+  final String duration;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: medium,
+      ),
+      child: Column(
+        children: [
+          Text(
+            "$duration min",
+            style: GoogleFonts.sen(
+              color: darkText,
+              fontWeight: FontWeight.w900,
+              fontSize: large,
+            ),
+          ),
+          Text(
+            "ESTIMATED DELIVERY TIME",
+            textAlign: TextAlign.center,
+            style: GoogleFonts.sen(
+              color: darkText.withOpacity(0.5),
+              fontSize: smallMedium,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// courier agent widget
 class CourierAgent extends StatelessWidget {
   const CourierAgent({
     super.key,
+    required this.courierName,
   });
+
+  final String courierName;
 
   @override
   Widget build(BuildContext context) {
@@ -270,7 +301,7 @@ class CourierAgent extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Robert F.",
+                      courierName,
                       style: GoogleFonts.sen(
                         color: darkText,
                         fontWeight: FontWeight.w700,
