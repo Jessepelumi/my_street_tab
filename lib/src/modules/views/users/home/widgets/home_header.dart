@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:my_street_tab/src/modules/views/users/cart/cart.dart';
+import 'package:my_street_tab/src/modules/views/users/search/search.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
@@ -45,6 +46,7 @@ class HomeHeader extends StatelessWidget {
                         children: [
                           Expanded(
                             child: TextFormField(
+                              onTap: () => Get.to(() => const Search()),
                               cursorColor: darkText.withOpacity(0.7),
                               cursorHeight: medium,
                               decoration: const InputDecoration(
