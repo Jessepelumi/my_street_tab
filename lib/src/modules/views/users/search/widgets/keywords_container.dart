@@ -7,7 +7,11 @@ import 'package:my_street_tab/src/utils/core/sizes.dart';
 class KeywordsContainer extends StatelessWidget {
   const KeywordsContainer({
     super.key,
+    required this.color,
+    this.textColor = darkText,
   });
+
+  final Color color, textColor;
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +23,7 @@ class KeywordsContainer extends StatelessWidget {
           vertical: small,
         ),
         decoration: BoxDecoration(
+          color: color,
           border: Border.all(
             color: darkText.withOpacity(0.2),
           ),
@@ -26,7 +31,9 @@ class KeywordsContainer extends StatelessWidget {
         ),
         child: Text(
           "Burger",
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: textColor,
+              ),
         ),
       ),
     );
