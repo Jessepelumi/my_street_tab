@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
 
 class SearchSectionTitle extends StatelessWidget {
@@ -13,9 +14,7 @@ class SearchSectionTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            fontSize: smallLarge,
-          ),
+      style: GoogleFonts.sen(fontSize: smallLarge),
     );
   }
 }
