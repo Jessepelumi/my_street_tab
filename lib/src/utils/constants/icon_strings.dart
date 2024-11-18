@@ -45,6 +45,13 @@ class IconStrings {
   static const String send = "assets/svg/send.svg";
   static const String completed = "assets/svg/completed.svg";
   static const String loading = "assets/svg/loading.svg";
+  static const String settings = "assets/svg/settings.svg";
+  static const String card = "assets/svg/card.svg";
+  static const String help = "assets/svg/help.svg";
+  static const String bin = "assets/svg/bin.svg";
+  static const String addProfile = "assets/svg/add-profile.svg";
+  static const String edit = "assets/svg/edit.svg";
+  static const String logout = "assets/svg/logout.svg";
 
   // vendor app
   static const String headerMenu = "assets/svg/header-menu.svg";
