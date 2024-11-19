@@ -2,9 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:my_street_tab/src/modules/router/user/navigation.dart';
+import 'package:my_street_tab/src/auth/views/onboarding/onboarding.dart';
+//import 'package:my_street_tab/src/modules/router/vendor/navigation.dart';
+//import 'package:my_street_tab/src/modules/router/user/navigation.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
 import 'package:my_street_tab/src/utils/themes/elevated_button.dart';
+import 'package:my_street_tab/src/utils/themes/text_theme.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -18,8 +21,9 @@ class App extends StatelessWidget {
         primaryColor: primary,
         scaffoldBackgroundColor: scaffoldWhite,
         elevatedButtonTheme: AppElevatedButtonTheme.appElevatedButtonTheme,
+        textTheme: AppTextTheme.textTheme,
       ),
-      home: const Navigation(),
+      home: const Onboarding(),
     );
   }
 }
