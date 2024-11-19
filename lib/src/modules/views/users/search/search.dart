@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_street_tab/src/modules/views/controllers/draggable_sheet_controller.dart';
+import 'package:my_street_tab/src/modules/views/users/search/restaurant_details.dart';
 import 'package:my_street_tab/src/modules/views/users/search/widgets/keywords_container.dart';
 import 'package:my_street_tab/src/modules/views/users/search/widgets/search_section_title.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
@@ -153,10 +154,10 @@ class Search extends StatelessWidget {
                     Expanded(
                       child: CustomScrollView(
                         controller: scrollController,
-                        slivers: const [
+                        slivers: [
                           SliverToBoxAdapter(
                             child: Padding(
-                              padding: EdgeInsets.all(medium),
+                              padding: const EdgeInsets.all(medium),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -165,23 +166,48 @@ class Search extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      SearchSectionTitle(
+                                      const SearchSectionTitle(
                                         title: "Recent Keywords",
                                       ),
-                                      SizedBox(height: small),
-                                      KeywordsContainer(
-                                        color: Colors.transparent,
+                                      const SizedBox(height: small),
+                                      SizedBox(
+                                        height: 43,
+                                        child: ListView(
+                                          scrollDirection: Axis.horizontal,
+                                          children: List.generate(
+                                            5, // Number of items
+                                            (index) => const Padding(
+                                              padding:
+                                                  EdgeInsets.only(right: small),
+                                              child: KeywordsContainer(
+                                                color: Colors.transparent,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: medium),
+                                  const SizedBox(height: medium),
 
                                   // suggested restaurants
-                                  SearchSectionTitle(
+                                  const SearchSectionTitle(
                                     title: "Suggested Restaurants",
                                   ),
-                                  SizedBox(height: small),
-                                  SugestedRestaurant(),
+                                  const SizedBox(height: small),
+                                  ListView.builder(
+                                    shrinkWrap: true,
+                                    physics:
+                                        const NeverScrollableScrollPhysics(),
+                                    itemCount: 3,
+                                    padding: EdgeInsets.zero,
+                                    itemBuilder: (context, index) {
+                                      return const Padding(
+                                        padding: EdgeInsets.only(bottom: small),
+                                        child: SugestedRestaurant(),
+                                      );
+                                    },
+                                  ),
                                 ],
                               ),
                             ),
@@ -207,53 +233,56 @@ class SugestedRestaurant extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: medium,
-      ),
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: darkText.withOpacity(0.2),
+    return GestureDetector(
+      onTap: () => Get.to(() => const RestaurantDetails()),
+      child: Container(
+        padding: const EdgeInsets.symmetric(
+          vertical: medium,
+        ),
+        decoration: BoxDecoration(
+          border: Border(
+            bottom: BorderSide(
+              color: darkText.withOpacity(0.2),
+            ),
           ),
         ),
-      ),
-      child: Row(
-        children: [
-          Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-              color: primary.withOpacity(0.5),
-              borderRadius: BorderRadius.circular(small),
+        child: Row(
+          children: [
+            Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                color: primary.withOpacity(0.5),
+                borderRadius: BorderRadius.circular(small),
+              ),
             ),
-          ),
-          const SizedBox(width: small),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Spicy Restaurant",
-                  style: Theme.of(context).textTheme.labelLarge,
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.star_border,
-                      color: red.withOpacity(0.7),
-                    ),
-                    const SizedBox(width: extraSmall),
-                    Text(
-                      "4.7",
-                      style: Theme.of(context).textTheme.labelLarge,
-                    ),
-                  ],
-                ),
-              ],
+            const SizedBox(width: small),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Spicy Restaurant",
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.star_border,
+                        color: red.withOpacity(0.7),
+                      ),
+                      const SizedBox(width: extraSmall),
+                      Text(
+                        "4.7",
+                        style: Theme.of(context).textTheme.labelLarge,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
