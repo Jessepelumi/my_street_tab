@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:my_street_tab/src/modules/views/users/cart/cart.dart';
 import 'package:my_street_tab/src/modules/views/users/search/search.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
@@ -104,17 +105,18 @@ class HomeHeader extends StatelessWidget {
               // greeting
               Text(
                 "Good Morning",
-                style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                      color: white,
-                      fontWeight: FontWeight.w900,
-                    ),
+                style: GoogleFonts.sen(
+                  color: white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: Theme.of(context).textTheme.displaySmall?.fontSize,
+                ),
               ),
               Text(
                 "Rice and Shine! It's Breakfast Time",
-                style: Theme.of(context)
-                    .textTheme
-                    .labelLarge
-                    ?.copyWith(color: white),
+                style: GoogleFonts.sen(
+                  color: white,
+                  fontSize: Theme.of(context).textTheme.labelLarge?.fontSize,
+                ),
               ),
             ],
           ),
