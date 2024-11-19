@@ -65,34 +65,57 @@ class Home extends StatelessWidget {
             ),
 
             // final
-            const Padding(
-              padding: EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                 horizontal: medium,
                 vertical: small,
               ),
               child: Column(
                 children: [
                   // recommended header
-                  SectionHeader(
+                  const SectionHeader(
                     title: "Recommended",
                     isAction: false,
                   ),
-                  SizedBox(height: small),
+                  const SizedBox(height: small),
 
                   // recommended container
-                  VerticalContainer(),
-                  SizedBox(height: smallLarge),
+                  SizedBox(
+                    height: 252,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: List.generate(
+                        5, // Number of items
+                        (index) => const Padding(
+                          padding: EdgeInsets.only(right: smallMedium),
+                          child: VerticalContainer(),
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: smallLarge),
                   //List.generate()
 
                   // most popular header
-                  SectionHeader(
+                  const SectionHeader(
                     title: "Most Popular",
                     isAction: false,
                   ),
-                  SizedBox(height: small),
+                  const SizedBox(height: small),
 
                   // most popular container
-                  HorizontalContainer(),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemCount: 3,
+                    padding: EdgeInsets.zero,
+                    itemBuilder: (context, index) {
+                      return const Padding(
+                        padding: EdgeInsets.only(bottom: smallMedium),
+                        child: HorizontalContainer(),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
