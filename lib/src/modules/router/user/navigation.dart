@@ -34,23 +34,23 @@ class Navigation extends StatelessWidget {
                   height: 26,
                 ),
               ),
-              GestureDetector(
-                onTap: () => controller.selectedIndex.value = 1,
-                child: SvgPicture.asset(
-                  controller.selectedIndex.value == 1
-                      ? IconStrings.locationFilled
-                      : IconStrings.locationOutlined,
-                  width: 26,
-                  height: 26,
-                ),
-              ),
+              // GestureDetector(
+              //   onTap: () => controller.selectedIndex.value = 1,
+              //   child: SvgPicture.asset(
+              //     controller.selectedIndex.value == 1
+              //         ? IconStrings.locationFilled
+              //         : IconStrings.locationOutlined,
+              //     width: 26,
+              //     height: 26,
+              //   ),
+              // ),
               Stack(
                 clipBehavior: Clip.none,
                 children: [
                   GestureDetector(
-                    onTap: () => controller.selectedIndex.value = 2,
+                    onTap: () => controller.selectedIndex.value = 1,
                     child: SvgPicture.asset(
-                      controller.selectedIndex.value == 2
+                      controller.selectedIndex.value == 1
                           ? IconStrings.chatFilled
                           : IconStrings.chatOutlined,
                       width: 26,
@@ -82,9 +82,9 @@ class Navigation extends StatelessWidget {
                 ],
               ),
               GestureDetector(
-                onTap: () => controller.selectedIndex.value = 3,
+                onTap: () => controller.selectedIndex.value = 2,
                 child: SvgPicture.asset(
-                  controller.selectedIndex.value == 3
+                  controller.selectedIndex.value == 2
                       ? IconStrings.notificationFilled
                       : IconStrings.notificationOutlined,
                   width: 26,
@@ -92,9 +92,9 @@ class Navigation extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () => controller.selectedIndex.value = 4,
+                onTap: () => controller.selectedIndex.value = 3,
                 child: SvgPicture.asset(
-                  controller.selectedIndex.value == 4
+                  controller.selectedIndex.value == 3
                       ? IconStrings.userFilled
                       : IconStrings.userOutlined,
                   width: 26,
