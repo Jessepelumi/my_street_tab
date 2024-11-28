@@ -51,30 +51,9 @@ class Settings extends StatelessWidget {
                   ),
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Location",
-                    style: GoogleFonts.sen(
-                      fontSize:
-                          Theme.of(context).textTheme.titleMedium?.fontSize,
-                    ),
-                  ),
-                  Obx(
-                    () => Switch(
-                      value: toggleController.isLocationSwitched.value,
-                      onChanged: toggleController.toggleLocationSwitch,
-                      activeColor: white,
-                      activeTrackColor: red.withOpacity(0.8),
-                      inactiveThumbColor: white,
-                      inactiveTrackColor: primary.withOpacity(0.2),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: smallMedium),
+              const SizedBox(height: extraSmall),
               GestureDetector(
+                behavior: HitTestBehavior.opaque,
                 onTap: () {},
                 child: Row(
                   children: [
@@ -149,6 +128,7 @@ class OtherSettingsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      behavior: HitTestBehavior.opaque,
       onTap: action,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
