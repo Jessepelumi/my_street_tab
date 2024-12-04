@@ -6,4 +6,5 @@ class ImageStrings {
 
   // others
   static const String locationAccess = "assets/images/location-access.png";
+  static const String noCard = "assets/images/nocard.png";
 }
