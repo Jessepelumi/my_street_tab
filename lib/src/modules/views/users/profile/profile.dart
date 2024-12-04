@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_street_tab/src/modules/views/shared/custom_appbar.dart';
+import 'package:my_street_tab/src/modules/views/users/profile/cards.dart';
+import 'package:my_street_tab/src/modules/views/users/profile/help_center.dart';
 import 'package:my_street_tab/src/modules/views/users/profile/personal_data.dart';
 import 'package:my_street_tab/src/modules/views/users/profile/settings.dart';
 import 'package:my_street_tab/src/modules/views/users/profile/widgets/profilesetting_tile.dart';
@@ -98,7 +100,7 @@ class Profile extends StatelessWidget {
                   ),
                   const SizedBox(height: medium),
                   ProfileSettingTile(
-                    action: () {},
+                    action: () => Get.to(() => const Cards()),
                     title: "Cards",
                     asset: IconStrings.card,
                   ),
@@ -119,25 +121,19 @@ class Profile extends StatelessWidget {
                   ),
                   const SizedBox(height: medium),
                   ProfileSettingTile(
-                    action: () {},
+                    action: () => Get.to(() => const HelpCenter()),
                     title: "Help Center",
                     asset: IconStrings.help,
                   ),
                   const SizedBox(height: medium),
                   ProfileSettingTile(
                     action: () {},
-                    title: "Request Account Deletion",
+                    title: "Delete Account",
                     asset: IconStrings.bin,
-                  ),
-                  const SizedBox(height: medium),
-                  ProfileSettingTile(
-                    action: () {},
-                    title: "Add Another Account",
-                    asset: IconStrings.addProfile,
                   ),
                 ],
               ),
-              const SizedBox(height: medium),
+              const SizedBox(height: extraLarge),
               OutlinedButton(
                 onPressed: () {},
                 style: OutlinedButton.styleFrom(
