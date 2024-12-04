@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_street_tab/src/modules/views/controllers/draggable_sheet_controller.dart';
@@ -6,6 +7,7 @@ import 'package:my_street_tab/src/modules/views/users/search/restaurant_details.
 import 'package:my_street_tab/src/modules/views/users/search/widgets/keywords_container.dart';
 import 'package:my_street_tab/src/modules/views/users/search/widgets/search_section_title.dart';
 import 'package:my_street_tab/src/utils/constants/color_strings.dart';
+import 'package:my_street_tab/src/utils/constants/icon_strings.dart';
 import 'package:my_street_tab/src/utils/core/sizes.dart';
 
 class Search extends StatelessWidget {
@@ -90,15 +92,13 @@ class Search extends StatelessWidget {
                   GestureDetector(
                     onTap: () {},
                     child: Container(
-                      height: 40,
-                      width: 40,
+                      padding: const EdgeInsets.all(small),
                       decoration: BoxDecoration(
                         color: white,
                         borderRadius: BorderRadius.circular(extraLarge),
                       ),
-                      child: const Icon(
-                        Icons.search_rounded,
-                        size: 20,
+                      child: SvgPicture.asset(
+                        IconStrings.search,
                       ),
                     ),
                   ),
