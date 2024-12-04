@@ -54,6 +54,7 @@ class IconStrings {
   static const String logout = "assets/svg/logout.svg";
   static const String camera = "assets/svg/camera.svg";
   static const String food = "assets/svg/food.svg";
+  static const String search = "assets/svg/search.svg";
 
   // vendor app
   static const String headerMenu = "assets/svg/header-menu.svg";
