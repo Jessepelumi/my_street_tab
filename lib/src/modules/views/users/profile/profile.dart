@@ -100,7 +100,7 @@ class Profile extends StatelessWidget {
                   ),
                   const SizedBox(height: medium),
                   ProfileSettingTile(
-                    action: () => Get.to(() => const Cards()),
+                    action: () => Get.to(() => Cards()),
                     title: "Cards",
                     asset: IconStrings.card,
                   ),
