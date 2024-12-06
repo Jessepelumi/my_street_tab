@@ -7,13 +7,13 @@ import 'package:my_street_tab/src/utils/core/sizes.dart';
 class BankCardTile extends StatelessWidget {
   const BankCardTile({
     super.key,
-    required this.cardName,
+    required this.cardType,
     required this.cardNumber,
     required this.select,
     required this.isActive,
   });
 
-  final String cardName, cardNumber;
+  final String cardType, cardNumber;
   final VoidCallback select;
   final bool isActive;
 
@@ -49,7 +49,7 @@ class BankCardTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    cardName,
+                    cardType,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
