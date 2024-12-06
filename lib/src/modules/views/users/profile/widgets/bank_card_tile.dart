@@ -11,6 +11,7 @@ class BankCardTile extends StatelessWidget {
     required this.cardNumber,
     required this.select,
     required this.isActive,
+    //required this.cardLogo,
   });
 
   final String cardType, cardNumber;
@@ -64,6 +65,7 @@ class BankCardTile extends StatelessWidget {
                 ],
               ),
             ),
+            //Image.asset(cardLogo),
           ],
         ),
       ),
