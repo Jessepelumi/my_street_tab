@@ -27,7 +27,17 @@ class SelectCardController extends GetxController {
     },
   ].obs;
 
+  @override
+  void onInit() {
+    super.onInit();
+    if (cards.isNotEmpty) {
+      selectedIndex.value = 0;
+    }
+  }
+
   void selectCard(int index) {
-    selectedIndex.value = index;
+    if (index >= 0 && index < cards.length) {
+      selectedIndex.value = index;
+    }
   }
 }
