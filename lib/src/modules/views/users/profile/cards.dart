@@ -112,8 +112,13 @@ class Cards extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Image.asset(
-                            getCardLogo(selectedCard?["cardType"] ?? "default"),
+                          SizedBox(
+                            height: 40,
+                            width: 40,
+                            child: Image.asset(
+                              getCardLogo(
+                                  selectedCard?["cardType"] ?? "default"),
+                            ),
                           ),
                           Container(
                             padding: const EdgeInsets.symmetric(
